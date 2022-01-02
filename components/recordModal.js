@@ -29,7 +29,7 @@ class RecordModal extends React.Component {
       
     
       start = () => {
-        this.recordingStarted();
+        
         navigator.mediaDevices.getUserMedia({ audio: true },
           () => {
             console.log('Permission Granted');
@@ -45,7 +45,7 @@ class RecordModal extends React.Component {
           console.log('Permission Denied');
         } else {
 
-          console.log("started")
+          this.recordingStarted();
           Mp3Recorder
             .start()
             .then(() => {
@@ -64,18 +64,16 @@ class RecordModal extends React.Component {
             /*const added = await client.add(blob)
             const url = `https://ipfs.infura.io/ipfs/${added.path}`
             console.log(url)*/
-            console.log(blob)
+
           }).catch((e) => console.log(e));
       };
 
       
 
       upload = async() =>{
-        this.podcastPublished();
         const addedAudio = await client.add(this.state.data)
         const url = `https://ipfs.infura.io/ipfs/${addedAudio.path}`
         this.props.podcastContract.publishPodcast(url,this.state.name,this.state.category)
-        console.log("Published")
         this.setState({ isOpen: false });
       }
       
@@ -102,11 +100,7 @@ class RecordModal extends React.Component {
       icon: '🔴',
     });
 
-    podcastPublished = () => toast('Podcast Published',{  
-      duration: 4000,
-      position: 'bottom-left',
-      type: 'success',
-    });
+
       
     render(){
 
