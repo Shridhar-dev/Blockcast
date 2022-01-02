@@ -49,7 +49,7 @@ function PlayingBarExplore() {
                 </div>
             </div>
             <div className={`${showInput ? 'flex' : ' hidden'} text-black items-center justify-center mt-5`}>
-                <input type="text" onChange={(e)=>{setMatic(e.target.value)}} value={matic} placeholder="Enter amount of Matic" className="p-1 px-2 mr-2 rounded-sm"/>
+                <input type="text" onChange={(e)=>{setMatic(e.target.value)}} value={matic} placeholder="Enter amt of Matic to tip" className="p-1 px-2 mr-2 rounded-sm"/>
                 <button onClick={()=>{context2.podcastContract.tip(context?.audioData?.author,{value:ethers.utils.parseEther(matic)})}}>📩</button>
             </div>
 
