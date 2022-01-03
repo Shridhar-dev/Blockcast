@@ -10,8 +10,6 @@ const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
 class RecordModal extends React.Component {
 
-
-
     constructor(props){
         super(props);
         this.state = {
@@ -45,12 +43,14 @@ class RecordModal extends React.Component {
           console.log('Permission Denied');
         } else {
 
-          this.recordingStarted();
+          
           Mp3Recorder
             .start()
             .then(() => {
+              this.recordingStarted();
               this.setState({ isRecording: true, playPause: '/stop.png' });
             }).catch((e) => console.error(e));
+          
         }
       };
     
@@ -61,10 +61,6 @@ class RecordModal extends React.Component {
           .getMp3()
           .then(async([buffer, blob]) => {
             this.setState({ isRecording: true, playPause: '/record.svg',data:blob });
-            /*const added = await client.add(blob)
-            const url = `https://ipfs.infura.io/ipfs/${added.path}`
-            console.log(url)*/
-
           }).catch((e) => console.log(e));
       };
 
@@ -114,15 +110,7 @@ class RecordModal extends React.Component {
                     <span>or upload file</span>
                     
                     <input type="file" onChange={this.captureFile} id="audio-file-uploading" className="mx-auto w-4/5 audio-file-uploading"/>
-                    {/*<label for="audio-file-uploading" className="audio-file-label">Select file to upload</label>*/}
-                    
-                    {/*
-                    <div className=" text-center bg-black text-white py-3 mt-3">
-                      <p className="mb-1">Upload thumbnail</p>
-                      <input type="file" onChange={} className="mx-auto w-4/5 audio-file-uploading"/>
-                    </div>
-                    */}
-
+                  
                     <input type="text" onChange={(e)=>{this.setState({name:e.target.value})}} value={this.state.name} placeholder="name" className="mt-5 p-1 px-3 rounded w-full border-2 border-black"></input>
                    
                     <div className="mt-2 w-full text-center">
