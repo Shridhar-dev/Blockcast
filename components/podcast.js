@@ -90,7 +90,7 @@ function Podcast(props) {
         let obj = {
             name: props.data.name,
             description: `${props.data.name} is a podcast deployed on the blockchain through Blockcast.`,
-            image: `https://api.apitemplate.io/2d777b2b12d20ddc@WgsRBcxs/image.png?text_1.text=Blockcast%23${props.data.id}`,
+            image: `https://api.apitemplate.io/2d777b2b12d20ddc@${process.env.NEXT_PUBLIC_AUTH_CODE}/image.png?text_1.text=Blockcast%23${props.data.id}`,
             animation_url:props.data.link
         }
         

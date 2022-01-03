@@ -1,3 +1,3 @@
-const podcastAddress = "0x33A8e8201aCdB80e58c9902aC94Ec875FebFAC40";
+const podcastAddress = "0x8D551Ad0dbef041a1DE213cDE120ec084A3C16e5";
 
 export { podcastAddress }
