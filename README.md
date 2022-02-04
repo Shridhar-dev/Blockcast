@@ -1,15 +1,17 @@
-# Basic Sample Hardhat Project
+# Blockcast
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Try running some of the following tasks:
+![Banner](https://i.ibb.co/HHvsd2C/blkct.png)
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+Blockcast is a podcast platform based on Blockchain which allows you to publish your podcast on the blockchain, and also allows you to very easily make it an NFT ( 🌈 ), along with tipping the author, deployed on Polygon Testnet
+
+### 🛠️ Built with
+- Next.js
+- Tailwind CSS 
+- Hardhat (for local development)
+- IPFS
+- Ethersjs
+- Solidity
+
+<hr/>
+
